@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-bold";
+  src: url("assets/fonts/Montserrat-Bold.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat-italic";
+  src: url("assets/fonts/Montserrat-Italic.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("assets/fonts/Outfit-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit-bold";
+  src: url("assets/fonts/Outfit-Bold.ttf");
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-montserrat {
+  font-family: "Montserrat";
+}
+.font-montserrat-bold {
+  font-family: "Montserrat-bold";
+}
+.font-montserrat-italic {
+  font-family: "Montserrat-italic";
+}
+.font-outfit {
+  font-family: "Outfit";
+}
+.font-outfit-bold {
+  font-family: "Outfit-bold";
+}
+
+body {
+  background-color: #000000;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-ltr {
+  animation: marquee-ltr 30s linear infinite;
+  margin-right: -100%;
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 30s linear infinite;
+  margin-left: -100%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
