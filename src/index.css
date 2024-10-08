@@ -59,30 +59,44 @@ body {
 
 @keyframes marquee-ltr {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
 }
 
 @keyframes marquee-rtl {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-marquee-ltr {
-  animation: marquee-ltr 30s linear infinite;
-  margin-right: -100%;
+  animation: marquee-ltr 25s linear infinite;
 }
 
 .animate-marquee-rtl {
-  animation: marquee-rtl 30s linear infinite;
-  margin-left: -100%;
+  animation: marquee-rtl 25s linear infinite;
+}
+
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fcd34d;
+}
+
+.testimonial-slider .slick-list {
+  margin: 0 -1rem;
+}
+
+.testimonial-slider .slick-slide > div {
+  padding: 0 1rem;
 }
 
 @tailwind base;

@@ -7,6 +7,10 @@ export default {
         navigationText: "#BABABA",
         heroColor: "#FFAE00",
         purpleGrad: "#7300FF",
+        featureCard: "#121212",
+        hoverfeature: "#191919",
+        testimonialsBg: "#151515",
+        testimonialsCard: "#232323",
       },
 
       // animation: {
