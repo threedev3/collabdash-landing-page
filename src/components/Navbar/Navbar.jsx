@@ -5,17 +5,25 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigation = [
-    "Home",
-    "Services",
-    "Testimonials",
-    "Pricing",
-    "Why Choose Us",
-    "FAQ",
+    { name: "Home", id: "home" },
+    { name: "Services", id: "services" },
+    { name: "Testimonials", id: "testimonials" },
+    { name: "Pricing", id: "pricing" },
+    { name: "Why Choose Us", id: "why-choose-us" },
+    { name: "FAQ", id: "faq" },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
+  };
+
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsMenuOpen(false); // Close the mobile menu after clicking
   };
 
   return (
@@ -30,8 +38,9 @@ const Navbar = () => {
             <li
               key={index}
               className="list-none font-outfit uppercase cursor-pointer text-navigationText hover:text-heroColor transition-all duration-300 xl:text-base text-sm"
+              onClick={() => handleScroll(item.id)}
             >
-              {item}
+              {item.name}
             </li>
           ))}
         </ul>
@@ -78,8 +87,9 @@ const Navbar = () => {
               <li
                 key={index}
                 className="font-outfit-bold uppercase cursor-pointer text-white hover:text-heroColor transition-all duration-300 sm:text-4xl min-[540px]:text-3xl text-2xl"
+                onClick={() => handleScroll(item.id)}
               >
-                {item}
+                {item.name}
               </li>
             ))}
           </ul>

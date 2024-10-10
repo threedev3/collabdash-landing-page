@@ -10,6 +10,11 @@ import avatar1 from "./avatar1.png";
 import avatar2 from "./avatar2.png";
 import avatar3 from "./avatar3.png";
 import testimonialImg from "./testimonialImg.png";
+import priceIcon from "./priceIcon.png";
+import trialIcon from "./trialIcon.png";
+import chooseImg from "./chooseImg.png";
+import faqImg from "./faqImg.png";
+import chooseImg2 from "./chooseImg2.png";
 
 export {
   logo,
@@ -24,4 +29,9 @@ export {
   avatar2,
   avatar3,
   testimonialImg,
+  priceIcon,
+  trialIcon,
+  chooseImg,
+  faqImg,
+  chooseImg2,
 };

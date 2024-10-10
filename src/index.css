@@ -85,10 +85,14 @@ body {
 
 .slick-dots li button:before {
   color: white;
+  font-size: 12px;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #fcd34d;
+  color: white;
+  font-size: 16px;
 }
 
 .testimonial-slider .slick-list {
@@ -97,6 +101,13 @@ body {
 
 .testimonial-slider .slick-slide > div {
   padding: 0 1rem;
+}
+
+.custom-border {
+  border-style: solid;
+  border-width: 3px;
+  border-image: linear-gradient(#870094, #f3a701, #b29e00, #ff0b00) 1;
+  border-radius: 18px;
 }
 
 @tailwind base;
