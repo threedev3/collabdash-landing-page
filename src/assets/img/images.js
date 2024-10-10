@@ -15,6 +15,8 @@ import trialIcon from "./trialIcon.png";
 import chooseImg from "./chooseImg.png";
 import faqImg from "./faqImg.png";
 import chooseImg2 from "./chooseImg2.png";
+import heroDash from "./heroDash.png";
+import heroDash2 from "./heroDash2.png";
 
 export {
   logo,
@@ -34,4 +36,6 @@ export {
   chooseImg,
   faqImg,
   chooseImg2,
+  heroDash,
+  heroDash2,
 };

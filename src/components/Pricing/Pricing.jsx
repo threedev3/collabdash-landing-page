@@ -22,7 +22,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="relative px-4 sm:px-6 py-8 sm:py-16 ">
+    <div className="relative px-4 sm:px-6 py-8 sm:py-16 overflow-hidden">
       <div className="absolute md:top-20 left-0 bg-[url('/src/assets/img/pricingImg.png')] bg-no-repeat bg-contain lg:w-[400px] md:w-[700px] min-[540px]:w-[550px] w-[350px] h-[600px] -z-10 opacity-80"></div>
 
       <div className="absolute lg:-top-14 top-20 left-0 right-0 bottom-0 bg-[url('/src/assets/img/pricingBg.png')] bg-no-repeat bg-cover opacity-90 w-full h-[95%] -z-10"></div>
@@ -47,8 +47,6 @@ const Pricing = () => {
 
           <div className="w-full mt-4 md:px-12">
             <div className="grid md:grid-cols-[1fr_0.1fr_1fr] grid-cols-1 gap-3">
-              {/* First Card */}
-
               <div className="flex flex-col gap-4 items-start w-full p-6 bg-transparent h-full custom-border">
                 <div className="flex flex-col justify-center items-center gap-4">
                   <div>
@@ -82,10 +80,8 @@ const Pricing = () => {
                 ))}
               </div>
 
-              {/* Separator */}
               <div className="h-auto w-0.5 bg-white/30 rounded-full mx-auto md:block hidden"></div>
 
-              {/* Second Card */}
               <div className="flex flex-col gap-4 items-start w-full p-6 bg-transparent h-full custom-border">
                 <div className="flex flex-col justify-center items-center gap-4">
                   <div>

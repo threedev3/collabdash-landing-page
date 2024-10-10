@@ -50,7 +50,7 @@ const Navbar = () => {
             Sign In
           </button>
           <button className="xl:py-2 py-1.5 xl:px-6 px-4 border-2 border-heroColor bg-heroColor rounded-full text-white font-outfit hover:bg-transparent transition-all duration-300 xl:text-base text-sm">
-            Sign Up
+            Book A Demo
           </button>
         </div>
 

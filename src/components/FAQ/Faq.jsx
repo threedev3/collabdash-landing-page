@@ -47,7 +47,7 @@ const Faq = () => {
                   className="flex justify-between gap-3 items-center w-full text-left "
                   onClick={() => toggleAccordion(index)}
                 >
-                  <span className="min-[1400px]:text-2xl xl:text-xl md:text-xl min-[540px]:text-base text-base font-semibold font-outfit text-white uppercase">
+                  <span className="min-[1400px]:text-2xl xl:text-xl md:text-xl min-[540px]:text-base text-base font-semibold font-outfit text-white capitalize">
                     {item.question}
                   </span>
 

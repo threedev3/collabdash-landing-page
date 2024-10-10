@@ -22,6 +22,8 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="relative px-4 sm:px-6 pt-8 pb-4 sm:pt-16 sm:pb-8 bg-testimonialsBg">
       <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto ">
@@ -54,7 +56,7 @@ const Footer = () => {
           <div className="flex min-[540px]:flex-row flex-col justify-between items-center gap-3">
             <div className="">
               <p className="font-outfit text-white/60 md:text-lg min-[540px]:text-sm text-sm">
-                Copyright © 2023 Collabez
+                Copyright © {currentYear} Collabez
               </p>
             </div>
             <div className="">

@@ -49,11 +49,11 @@ const Features = () => {
   //   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="relative px-4 sm:px-6 py-8 sm:py-16 min-h-[100vh]">
-      <div className="absolute md:-top-44 min-[540px]:-top-28 -top-20 -left-2 bg-[url('/src/assets/img/circleFeature.png')] bg-no-repeat bg-contain lg:w-[800px] md:w-[700px] min-[540px]:w-[550px] w-[350px] h-[1000px] -z-10"></div>
+    <div className="relative px-4 sm:px-6 py-8 sm:py-16 min-h-[100vh] overflow-hidden">
+      <div className="absolute md:-top-44 min-[540px]:-top-28 -top-20 left-0 bg-[url('/src/assets/img/circleFeature.png')] bg-no-repeat bg-contain lg:w-[800px] md:w-[700px] min-[540px]:w-[550px] w-[350px] h-[1000px] -z-10"></div>
       <div className="absolute lg:-top-14 top-20 left-0 right-0 bottom-0 bg-[url('/src/assets/img/featuresBg.png')] bg-no-repeat bg-cover h-[107vh] w-full -z-10"></div>
-      <div className="absolute -top-6 left-0 h-[271px] w-full bg-black/95 blur-2xl -z-10"></div>
-      <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 lg:mt-24 md:mt-16 mt-4">
+      <div className="absolute -top-60 left-0 h-[471px] w-full bg-black/90 blur-2xl -z-10"></div>
+      <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 lg:mt-12 md:mt-16 mt-4">
         <div className="flex flex-col sm:gap-6 gap-3 z-20 lg:mt-10 md:mt-6 md:mb-0 mb-6">
           <div className="text-white font-outfit-bold sm:text-3xl text-2xl">
             <h3>Features Overview</h3>
@@ -78,7 +78,7 @@ const Features = () => {
                 <img
                   src={feature.icon}
                   alt=""
-                  className="w-8 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  className="w-8 object-contain  transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                 />
               </div>
 

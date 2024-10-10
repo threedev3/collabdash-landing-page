@@ -110,6 +110,57 @@ body {
   border-radius: 18px;
 }
 
+/* @keyframes flip-in {
+  0% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes flip-out {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-in {
+  animation: flip-in 0.5s forwards;
+}
+
+.flip-out {
+  animation: flip-out 0.5s forwards;
+} */
+
+.word-transition {
+  display: inline-block;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-out {
+  opacity: 0;
+  transform: translateY(-20px); /* Slide out to the right */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
