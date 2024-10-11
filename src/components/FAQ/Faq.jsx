@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronUpIcon } from "@heroicons/react/16/solid";
+import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import { faqImg } from "../../assets/img/images";
 
 const Faq = () => {
@@ -28,26 +28,26 @@ const Faq = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-6 py-8 sm:py-16 ">
+    <div className="relative px-4 sm:px-6 py-8 sm:py-10 overflow-hidden">
       <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto ">
         <div className="flex flex-col md:gap-10 gap-6">
           <div className="max-w-3xl mx-auto">
-            <h3 className="font-outfit text-[26px] min-[540px]:text-3xl sm:text-4xl md:text-5xl  leading-tight text-white text-center font-medium">
+            <h3 className="font-outfit-bold text-[26px] min-[540px]:text-3xl sm:text-4xl md:text-5xl  leading-tight text-white text-center font-medium">
               Frequently Asked{" "}
-              <span className="text-heroColor font-outfit-bold">Questions</span>{" "}
+              <span className="text-heroColor ">Questions</span>{" "}
             </h3>
           </div>
           <div className="">
             {faqData.map((item, index) => (
               <div
                 key={index}
-                className="border-b border-white/70 xl:py-12 py-8"
+                className="border-b border-white/70 xl:py-10 py-6"
               >
                 <button
                   className="flex justify-between gap-3 items-center w-full text-left "
                   onClick={() => toggleAccordion(index)}
                 >
-                  <span className="min-[1400px]:text-2xl xl:text-xl md:text-xl min-[540px]:text-base text-base font-semibold font-outfit text-white capitalize">
+                  <span className="min-[1400px]:text-2xl xl:text-xl md:text-xl min-[540px]:text-lg text-lg font-semibold font-outfit text-white capitalize">
                     {item.question}
                   </span>
 
@@ -56,7 +56,7 @@ const Faq = () => {
                       openIndex === index ? "bg-white" : ""
                     }`}
                   >
-                    <ChevronUpIcon
+                    <ChevronDownIcon
                       className={`sm:w-6 sm:h-6 w-5 h-5 transition-transform duration-300  ${
                         openIndex === index
                           ? "rotate-180 text-black"
@@ -72,7 +72,7 @@ const Faq = () => {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-white/60 font-outfit md:text-lg sm:text-base text-sm">
+                  <p className="text-white/90 font-outfit md:text-lg sm:text-base text-base">
                     {item.answer}
                   </p>
                 </div>

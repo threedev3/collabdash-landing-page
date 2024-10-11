@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { logo } from "../../assets/img/images";
+import { collabDashLogo } from "../../assets/img/images";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 
 const Navbar = () => {
@@ -10,6 +10,7 @@ const Navbar = () => {
     { name: "Testimonials", id: "testimonials" },
     { name: "Pricing", id: "pricing" },
     { name: "Why Choose Us", id: "why-choose-us" },
+    { name: "Contact Us", id: "contact-us" },
     { name: "FAQ", id: "faq" },
   ];
 
@@ -29,15 +30,19 @@ const Navbar = () => {
   return (
     <nav className="relative z-50">
       <div className="flex flex-row justify-between items-center gap-3">
-        <div className="cursor-pointer xl:w-auto lg:w-48 w-auto">
-          <img src={logo} alt="" className="object-contain" />
+        <div className="cursor-pointer ">
+          <img
+            src={collabDashLogo}
+            alt=""
+            className=" w-[260px] aspect-auto object-contain"
+          />
         </div>
 
         <ul className="lg:flex lg:items-center xl:gap-6 gap-4 hidden">
           {navigation.map((item, index) => (
             <li
               key={index}
-              className="list-none font-outfit uppercase cursor-pointer text-navigationText hover:text-heroColor transition-all duration-300 xl:text-base text-sm"
+              className="list-none font-outfit capitalize cursor-pointer text-navigationText hover:text-heroColor transition-all duration-300 xl:text-base text-sm"
               onClick={() => handleScroll(item.id)}
             >
               {item.name}
@@ -46,12 +51,12 @@ const Navbar = () => {
         </ul>
 
         <div className="lg:flex lg:items-center xl:gap-6 gap-4 hidden">
-          <button className="xl:py-2 py-1.5 xl:px-6 px-4 border-2 border-heroColor rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300xl:text-base text-sm">
+          <button className="xl:py-2 py-1.5 xl:px-6 px-4 border-2 border-heroColor bg-transparent rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 xl:text-base text-sm">
             Sign In
           </button>
-          <button className="xl:py-2 py-1.5 xl:px-6 px-4 border-2 border-heroColor bg-heroColor rounded-full text-white font-outfit hover:bg-transparent transition-all duration-300 xl:text-base text-sm">
+          {/* <button className="xl:py-2 py-1.5 xl:px-6 px-4 border-2 border-heroColor bg-heroColor rounded-full text-white font-outfit hover:bg-transparent transition-all duration-300 xl:text-base text-sm">
             Book A Demo
-          </button>
+          </button> */}
         </div>
 
         <div
@@ -82,7 +87,7 @@ const Navbar = () => {
         } transition-transform duration-500 ease-in-out lg:hidden flex items-center justify-center`}
       >
         <div className="flex flex-col items-center justify-center h-full w-full">
-          <ul className="space-y-4 text-center">
+          <ul className="space-y-5 text-center">
             {navigation.map((item, index) => (
               <li
                 key={index}
@@ -97,9 +102,9 @@ const Navbar = () => {
             <button className="w-full py-3 px-6 border-2 border-heroColor rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 text-xl">
               Sign In
             </button>
-            <button className="w-full py-3 px-6 border-2 border-heroColor bg-heroColor rounded-full text-white font-outfit hover:bg-transparent transition-all duration-300 text-xl">
+            {/* <button className="w-full py-3 px-6 border-2 border-heroColor bg-heroColor rounded-full text-white font-outfit hover:bg-transparent transition-all duration-300 text-xl">
               Sign Up
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -1,6 +1,4 @@
-import logo from "./logo.png";
-import heroLaptop from "./heroLaptop3.png";
-import smallHeroLaptop from "./smallHeroLaptop.png";
+import collabDashLogo from "./collab-dash-logo.png";
 import feature1 from "./feature1.png";
 import feature2 from "./feature2.png";
 import feature3 from "./feature3.png";
@@ -12,16 +10,13 @@ import avatar3 from "./avatar3.png";
 import testimonialImg from "./testimonialImg.png";
 import priceIcon from "./priceIcon.png";
 import trialIcon from "./trialIcon.png";
-import chooseImg from "./chooseImg.png";
 import faqImg from "./faqImg.png";
 import chooseImg2 from "./chooseImg2.png";
-import heroDash from "./heroDash.png";
-import heroDash2 from "./heroDash2.png";
+import contactImg from "./contactImg.png";
+import heroImg from "./heroImg.png";
+import smallHeroImg from "./smallHeroImg.png";
 
 export {
-  logo,
-  heroLaptop,
-  smallHeroLaptop,
   feature1,
   feature2,
   feature3,
@@ -33,9 +28,10 @@ export {
   testimonialImg,
   priceIcon,
   trialIcon,
-  chooseImg,
   faqImg,
   chooseImg2,
-  heroDash,
-  heroDash2,
+  contactImg,
+  collabDashLogo,
+  heroImg,
+  smallHeroImg,
 };

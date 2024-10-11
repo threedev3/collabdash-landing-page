@@ -109,7 +109,7 @@ const Testimonials = () => {
                     </p>
                   </div>
                   <blockquote
-                    className={`flex-grow text-center font-montserrat-italic xl:text-sm text-xs xl:max-w-[420px] transition-opacity duration-300 ${
+                    className={`flex-grow text-center font-outfit italic min-[1400px]:text-base xl:text-sm text-xs xl:max-w-[420px] transition-opacity duration-300 ${
                       activeSlide === index ? "text-white" : "text-white/60"
                     }`}
                   >

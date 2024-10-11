@@ -30,14 +30,13 @@ const Pricing = () => {
       <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto ">
         <div className="flex flex-col md:gap-10 gap-6">
           <div className="max-w-3xl mx-auto">
-            <h3 className="font-outfit text-[26px] min-[540px]:text-3xl sm:text-4xl md:text-5xl  leading-tight text-white text-center font-medium">
-              A Cost-Effective{" "}
-              <span className="text-heroColor font-outfit-bold">Solution</span>{" "}
+            <h3 className="font-outfit-bold text-[26px] min-[540px]:text-3xl sm:text-4xl md:text-5xl  leading-tight text-white text-center font-medium">
+              A Cost-Effective <span className="text-heroColor ">Solution</span>{" "}
               Built for Start-ups and Small Teams
             </h3>
           </div>
           <div className="max-w-4xl mx-auto">
-            <p className="font-outfit text-white/80 text-center text-lg">
+            <p className="font-outfit text-white/80 text-center sm:text-lg text-base">
               Unlike other platforms that charge for each additional feature,
               CollabDash offers one simple, affordable price for everything.
               Stop wasting money on separate subscriptions for time tracking,

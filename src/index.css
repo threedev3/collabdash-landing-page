@@ -1,19 +1,4 @@
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/fonts/Montserrat-Regular.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat-bold";
-  src: url("assets/fonts/Montserrat-Bold.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat-italic";
-  src: url("assets/fonts/Montserrat-Italic.ttf");
-  font-display: swap;
-}
-@font-face {
   font-family: "Outfit";
   src: url("assets/fonts/Outfit-Regular.ttf");
   font-display: swap;
@@ -28,15 +13,6 @@
   box-sizing: border-box;
 }
 
-.font-montserrat {
-  font-family: "Montserrat";
-}
-.font-montserrat-bold {
-  font-family: "Montserrat-bold";
-}
-.font-montserrat-italic {
-  font-family: "Montserrat-italic";
-}
 .font-outfit {
   font-family: "Outfit";
 }
@@ -159,6 +135,10 @@ body {
 .slide-out {
   opacity: 0;
   transform: translateY(-20px); /* Slide out to the right */
+}
+
+.react-select {
+  background-color: #000000;
 }
 
 @tailwind base;

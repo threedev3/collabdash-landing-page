@@ -65,7 +65,7 @@ const Features = () => {
             </p>
           </div>
           <div>
-            <button className="sm:px-6 sm:py-3 px-4 py-2 border-2 border-heroColor rounded-full font-montserrat text-white hover:bg-heroColor transition-colors duration-300">
+            <button className="sm:px-6 sm:py-3 px-4 py-2 border-2 border-heroColor rounded-full font-outfit text-white hover:bg-heroColor transition-colors duration-300">
               Read More
             </button>
           </div>

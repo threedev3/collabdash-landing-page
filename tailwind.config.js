@@ -11,6 +11,8 @@ export default {
         hoverfeature: "#191919",
         testimonialsBg: "#151515",
         testimonialsCard: "#232323",
+        stepBg: "#222222",
+        inputBg: "#161616",
       },
 
       // animation: {
