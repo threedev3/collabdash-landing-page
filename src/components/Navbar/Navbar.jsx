@@ -34,11 +34,11 @@ const Navbar = () => {
           <img
             src={collabDashLogo}
             alt=""
-            className=" w-[260px] aspect-auto object-contain"
+            className="w-[260px] aspect-auto object-contain"
           />
         </div>
 
-        <ul className="lg:flex lg:items-center xl:gap-6 gap-4 hidden">
+        <ul className="xl:flex lg:items-center min-[1400px]:gap-6 xl:gap-4 gap-3 hidden">
           {navigation.map((item, index) => (
             <li
               key={index}
@@ -50,17 +50,23 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:flex lg:items-center xl:gap-6 gap-4 hidden">
-          <button className="xl:py-2 py-1.5 xl:px-6 px-4 border-2 border-heroColor bg-transparent rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 xl:text-base text-sm">
-            Sign In
+        <div className="xl:flex lg:items-center xl:gap-6 gap-4 hidden">
+          <button
+            className="min-[1400px]:py-2 xl:py-1.5 py-1 min-[1400px]:px-6 xl:px-4 px-2 border-2 border-heroColor bg-transparent rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 xl:text-base text-sm"
+            onClick={() => handleScroll("contact-us")}
+          >
+            Live Preview
           </button>
-          {/* <button className="xl:py-2 py-1.5 xl:px-6 px-4 border-2 border-heroColor bg-heroColor rounded-full text-white font-outfit hover:bg-transparent transition-all duration-300 xl:text-base text-sm">
+          <button
+            className="min-[1400px]:py-2 xl:py-1.5 py-1 min-[1400px]:px-6 xl:px-4 px-2 border-2 border-heroColor  rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 xl:text-base text-sm"
+            onClick={() => handleScroll("contact-us")}
+          >
             Book A Demo
-          </button> */}
+          </button>
         </div>
 
         <div
-          className="lg:hidden block w-10 h-8 cursor-pointer z-50 relative"
+          className="xl:hidden block w-10 h-8 cursor-pointer z-50 relative"
           onClick={toggleMenu}
         >
           <Bars3Icon
@@ -84,7 +90,7 @@ const Navbar = () => {
       <div
         className={`fixed inset-0 bg-black bg-opacity-95 transform ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
-        } transition-transform duration-500 ease-in-out lg:hidden flex items-center justify-center`}
+        } transition-transform duration-500 ease-in-out xl:hidden flex items-center justify-center`}
       >
         <div className="flex flex-col items-center justify-center h-full w-full">
           <ul className="space-y-5 text-center">
@@ -99,12 +105,18 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="mt-12 space-y-4 w-64">
-            <button className="w-full py-3 px-6 border-2 border-heroColor rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 text-xl">
-              Sign In
+            <button
+              className="w-full py-3 px-6 border-2 border-heroColor rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 text-xl"
+              onClick={() => handleScroll("contact-us")}
+            >
+              Live Preview
             </button>
-            {/* <button className="w-full py-3 px-6 border-2 border-heroColor bg-heroColor rounded-full text-white font-outfit hover:bg-transparent transition-all duration-300 text-xl">
-              Sign Up
-            </button> */}
+            <button
+              className="w-full py-3 px-6 border-2 border-heroColor  rounded-full text-white font-outfit hover:bg-heroColor transition-all duration-300 text-xl"
+              onClick={() => handleScroll("contact-us")}
+            >
+              Book A Demo
+            </button>
           </div>
         </div>
       </div>

@@ -26,9 +26,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative px-4 sm:px-6 pt-8 pb-4 sm:pt-16 sm:pb-8 bg-testimonialsBg">
+    <div className="relative px-4 sm:px-6 pt-4 pb-4 sm:pt-8 sm:pb-8 bg-testimonialsBg">
       <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto ">
-        <div className="flex flex-col md:gap-10 gap-6">
+        <div className="flex flex-col md:gap-8 gap-6">
           <div className="mx-auto  cursor-pointer" onClick={scrollToTop}>
             <img
               src={collabDashLogo}
@@ -58,7 +58,7 @@ const Footer = () => {
 
           <div className="h-0.5 w-full bg-white/30 rounded-full"></div>
 
-          <div className="flex min-[540px]:flex-row flex-col justify-center items-center gap-3">
+          <div className="flex justify-center items-center gap-3">
             <div className="">
               <p className="font-outfit text-white/60 md:text-lg min-[540px]:text-sm text-sm">
                 Copyright © {currentYear} CollabDash

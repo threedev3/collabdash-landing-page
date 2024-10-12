@@ -115,8 +115,6 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-
-          <div className="h-0.5 w-full bg-white/30 rounded-full  mt-16"></div>
         </div>
       </div>
     </div>

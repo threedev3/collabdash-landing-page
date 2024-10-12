@@ -3,28 +3,56 @@ import { contactImg } from "../../assets/img/images";
 import Select from "react-select";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+import ReCAPTCHA from "react-google-recaptcha";
+import { PhoneNumberUtil } from "google-libphonenumber";
+import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     phone: "",
+    city: "",
     companySize: "",
     interests: [],
     currentTools: [],
-    otherTool: "",
+    // otherTool: "",
     challenges: "",
   });
   const [errors, setErrors] = useState({});
+
+  const phoneUtil = PhoneNumberUtil.getInstance();
+
+  const isPhoneValid = (phone) => {
+    try {
+      return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+    } catch (error) {
+      return false;
+    }
+  };
+
+  const isValid = isPhoneValid(formData.phone);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handlePhoneChange = (value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      phone: value,
+    }));
+  };
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
+  };
   const handleSelectChange = (selectedOption, { name }) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -32,10 +60,10 @@ const ContactForm = () => {
     }));
   };
 
-  const handleOtherToolChange = (e) => {
-    const { value } = e.target;
-    setFormData((prevData) => ({ ...prevData, otherTool: value }));
-  };
+  // const handleOtherToolChange = (e) => {
+  //   const { value } = e.target;
+  //   setFormData((prevData) => ({ ...prevData, otherTool: value }));
+  // };
 
   const handleNextStep = () => {
     setStep(2);
@@ -59,8 +87,11 @@ const ContactForm = () => {
       formErrors.email = "Please enter a valid email address.";
     }
 
-    if (!formData.phone) {
-      formErrors.phone = "Phone number is required.";
+    if (!formData.phone || !isValid) {
+      formErrors.phone = "Please enter a valid phone number.";
+    }
+    if (!formData.city) {
+      formErrors.city = "City is required.";
     }
 
     if (!formData.company) {
@@ -86,6 +117,11 @@ const ContactForm = () => {
   const handleSubmit = (e, onSuccess) => {
     e.preventDefault();
     if (validateForm()) {
+      if (!captchaValue) {
+        toast.error("Please complete the CAPTCHA to proceed.");
+        return;
+      }
+
       setIsSubmitting(true);
       const serviceId = import.meta.env.VITE_APP_EMAIL_SERVICE_ID;
       const templateId = import.meta.env.VITE_APP_TEMPLATE_SERVICE_ID;
@@ -109,30 +145,32 @@ const ContactForm = () => {
         to_name: "CollabDash",
         from_email: formData.email,
         from_phone: formData.phone,
+        city: formData.city,
         company: formData.company,
         companySize: companySizeValue,
         interests: selectedInterests,
         currentTools: selectedCurrentTools,
-        otherTools: formData.otherTool,
+        // otherTools: formData.otherTool,
         challenges: formData.challenges,
       };
-      //   console.log("Submitting data:", templateParams);
+      // console.log("Submitting data:", templateParams);
 
       emailjs
         .send(serviceId, templateId, templateParams, publicKey)
         .then((response) => {
-          toast.success("Request Submitted.");
-
+          // console.log("Form Data", templateParams);
           // Reset form data after successful submission
+          toast.success("Request submitted. We'll be in touch soon.");
           setFormData({
             name: "",
             email: "",
             company: "",
             phone: "",
+            city: "",
             companySize: "",
             interests: [],
             currentTools: [],
-            otherTool: "",
+            // otherTool: "",
             challenges: "",
           });
 
@@ -146,6 +184,7 @@ const ContactForm = () => {
         })
         .finally(() => {
           setStep(1);
+          setCaptchaValue(null);
           setIsSubmitting(false);
         });
 
@@ -178,7 +217,7 @@ const ContactForm = () => {
     { value: "Slack", label: "Slack" },
     { value: "Jira", label: "Jira" },
     { value: "Google Workspace", label: "Google Workspace" },
-    { value: "Other", label: "Other" },
+    // { value: "Other", label: "Other" },
   ];
 
   const customStyles = {
@@ -285,12 +324,14 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-6 py-8 sm:py-10 overflow-hidden bg-[url('/src/assets/img/contactBg.png')] bg-no-repeat bg-cover bg-top w-full">
+    <div className="relative px-4 sm:px-6 py-8 sm:py-12 overflow-hidden bg-[url('/src/assets/img/contactBg.png')] bg-no-repeat bg-cover bg-top w-full">
       <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto ">
         <div className="flex flex-col md:gap-10 gap-6">
+          <div className="h-0.5 w-full bg-white/30 rounded-full mb-4"></div>
+
           <div className="max-w-3xl mx-auto">
             <h3 className="font-outfit-bold text-[26px] min-[540px]:text-3xl sm:text-4xl md:text-5xl  leading-tight text-white text-center font-medium">
-              Contact Us <span className="text-heroColor ">Now</span>{" "}
+              Start Your <span className="text-heroColor ">Free Trial</span>{" "}
             </h3>
           </div>
           <div className="flex justify-between items-center gap-3 ">
@@ -322,7 +363,7 @@ const ContactForm = () => {
                   }`}
                 >
                   <div className="sm:space-y-8 space-y-4">
-                    <div className="grid sm:grid-cols-2 grid-cols-1 place-items-center gap-3">
+                    <div className="grid sm:grid-cols-2 grid-cols-1 gap-3">
                       <div className="flex flex-col gap-2 w-full">
                         <input
                           type="text"
@@ -354,15 +395,24 @@ const ContactForm = () => {
                         )}
                       </div>
                     </div>
-                    <div className="grid sm:grid-cols-2 grid-cols-1 place-items-center gap-3">
+                    <div className="grid sm:grid-cols-2 grid-cols-1 gap-3">
                       <div className="flex flex-col gap-2 w-full">
-                        <input
+                        {/* <input
                           type="tel"
                           name="phone"
                           placeholder="Phone Number"
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="w-full font-outfit py-3 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0 focus:ring-none"
+                        /> */}
+
+                        <PhoneInput
+                          defaultCountry="pk"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handlePhoneChange}
+                          placeholder="Phone number"
+                          className="w-full font-outfit py-1.5 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0 focus:ring-none"
                         />
                         {errors.phone && (
                           <span className="text-red-500 font-outfit lg:text-base text-sm">
@@ -374,9 +424,9 @@ const ContactForm = () => {
                       <div className="flex flex-col gap-2 w-full">
                         <input
                           type="text"
-                          name="company"
-                          placeholder="Company Name"
-                          value={formData.company}
+                          name="city"
+                          placeholder="City"
+                          value={formData.city}
                           onChange={handleInputChange}
                           className="w-full font-outfit py-3 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0 focus:ring-none"
                         />
@@ -404,7 +454,22 @@ const ContactForm = () => {
                   }`}
                 >
                   <div className="sm:space-y-8 space-y-4">
-                    <div className="grid sm:grid-cols-2 grid-cols-1  gap-3">
+                    <div className="grid sm:grid-cols-2 grid-cols-1 gap-3">
+                      <div className="flex flex-col gap-2 w-full">
+                        <input
+                          type="text"
+                          name="company"
+                          placeholder="Company Name"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          className="w-full font-outfit py-3 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0 focus:ring-none"
+                        />
+                        {errors.company && (
+                          <span className="text-red-500 font-outfit lg:text-base text-sm">
+                            {errors.company}
+                          </span>
+                        )}
+                      </div>
                       <div className="flex flex-col gap-2 w-full">
                         <Select
                           name="companySize"
@@ -422,6 +487,8 @@ const ContactForm = () => {
                           </span>
                         )}
                       </div>
+                    </div>
+                    <div className="grid sm:grid-cols-2 grid-cols-1 gap-3">
                       <div className="flex flex-col gap-2 w-full">
                         <Select
                           isMulti
@@ -440,8 +507,21 @@ const ContactForm = () => {
                           </span>
                         )}
                       </div>
+                      <div className="flex flex-col gap-2 w-full">
+                        <Select
+                          isMulti
+                          name="currentTools"
+                          options={currentToolsOptions}
+                          placeholder="Current Tools You Use"
+                          value={formData.currentTools}
+                          styles={customStyles}
+                          onChange={handleSelectChange}
+                          className="w-full font-outfit"
+                          classNamePrefix="react-select"
+                        />
+                      </div>
                     </div>
-                    <div
+                    {/* <div
                       className={`grid ${
                         formData.currentTools.some(
                           (tool) => tool.value === "Other"
@@ -473,7 +553,7 @@ const ContactForm = () => {
                           className="w-full font-outfit py-3 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0"
                         />
                       )}
-                    </div>
+                    </div> */}
                     <div className="grid  grid-cols-1 place-items-center gap-3">
                       <div className="flex flex-col gap-2 w-full">
                         <textarea
@@ -489,6 +569,13 @@ const ContactForm = () => {
                           </span>
                         )}
                       </div>
+                    </div>
+                    <div className="grid  grid-cols-1 gap-3">
+                      <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_APP_CAPTCHA_SITE_KEY}
+                        // sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                        onChange={handleCaptchaChange}
+                      />
                     </div>
                   </div>
                   <div className="flex gap-4 mt-6">
@@ -521,6 +608,8 @@ const ContactForm = () => {
               />
             </div>
           </div>
+
+          {/* <div className="h-0.5 w-full bg-white/30 rounded-full"></div> */}
         </div>
       </div>
     </div>

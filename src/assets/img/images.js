@@ -15,6 +15,7 @@ import chooseImg2 from "./chooseImg2.png";
 import contactImg from "./contactImg.png";
 import heroImg from "./heroImg.png";
 import smallHeroImg from "./smallHeroImg.png";
+import thankYouImg from "./thankYouImg.png";
 
 export {
   feature1,
@@ -34,4 +35,5 @@ export {
   collabDashLogo,
   heroImg,
   smallHeroImg,
+  thankYouImg,
 };

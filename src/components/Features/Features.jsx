@@ -46,11 +46,18 @@ const Features = () => {
     },
   ];
 
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   //   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="relative px-4 sm:px-6 py-8 sm:py-16 min-h-[100vh] overflow-hidden">
-      <div className="absolute md:-top-44 min-[540px]:-top-28 -top-20 left-0 bg-[url('/src/assets/img/circleFeature.png')] bg-no-repeat bg-contain lg:w-[800px] md:w-[700px] min-[540px]:w-[550px] w-[350px] h-[1000px] -z-10"></div>
+    <div className="relative px-4 sm:px-6 py-8 sm:py-16  overflow-hidden">
+      <div className="absolute md:-top-44 min-[540px]:-top-28 -top-20 left-0 bg-[url('/src/assets/img/circleFeature.png')] bg-no-repeat bg-contain lg:w-[700px] md:w-[700px] min-[540px]:w-[550px] w-[350px] h-[1000px] -z-10"></div>
       <div className="absolute lg:-top-14 top-20 left-0 right-0 bottom-0 bg-[url('/src/assets/img/featuresBg.png')] bg-no-repeat bg-cover h-[107vh] w-full -z-10"></div>
       <div className="absolute -top-60 left-0 h-[471px] w-full bg-black/90 blur-2xl -z-10"></div>
       <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 lg:mt-12 md:mt-16 mt-4">
@@ -65,15 +72,18 @@ const Features = () => {
             </p>
           </div>
           <div>
-            <button className="sm:px-6 sm:py-3 px-4 py-2 border-2 border-heroColor rounded-full font-outfit text-white hover:bg-heroColor transition-colors duration-300">
-              Read More
+            <button
+              className="sm:px-6 sm:py-3 px-4 py-2 border-2 border-heroColor rounded-full font-outfit text-white hover:bg-heroColor transition-colors duration-300"
+              onClick={() => handleScroll("contact-us")}
+            >
+              Book A Demo
             </button>
           </div>
         </div>
 
         {features.map((feature, index) => (
           <div key={index} className="relative overflow-hidden">
-            <div className="bg-featureCard min-h-[340px] rounded-sm flex flex-col gap-8 py-6 px-6 group hover:bg-hoverfeature transition-colors duration-300 ">
+            <div className="bg-featureCard min-h-[300px] rounded-sm flex flex-col gap-8 py-6 px-6 group hover:bg-hoverfeature transition-colors duration-300 ">
               <div className="h-16 w-16 rounded-full border-2 border-heroColor flex justify-center items-center p-1 group-hover:bg-heroColor transition-colors duration-300 flex-shrink-0">
                 <img
                   src={feature.icon}
@@ -97,11 +107,11 @@ const Features = () => {
                 </p>
               </div>
 
-              <div>
+              {/* <div>
                 <button className="font-outfit text-white text-base underline ">
                   READ MORE
                 </button>
-              </div>
+              </div> */}
 
               <div className="absolute bottom-0 left-0 w-full h-[6px] bg-heroColor scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center"></div>
             </div>

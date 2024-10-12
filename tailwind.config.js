@@ -15,6 +15,19 @@ export default {
         inputBg: "#161616",
       },
 
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+      },
+      animation: {
+        float: "float 3s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
+
       // animation: {
       //   marquee: "marquee 20s linear infinite",
       //   marquee2: "marquee 20s linear infinite",

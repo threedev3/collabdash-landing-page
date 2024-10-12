@@ -5,19 +5,29 @@ import { faqImg } from "../../assets/img/images";
 const Faq = () => {
   const faqData = [
     {
-      question: "How can CollabDash help my remote team stay productive?",
+      question: "What is CollabDash and how can it help my business?",
       answer:
-        "CollabDash makes it easy to manage remote teams with built-in time tracking, video meetings, and chat—all in one platform. Whether your team is scattered across time zones or working on-site, you’ll have full visibility into productivity and collaboration.",
+        "CollabDash is an all-in-one platform designed to simplify your business operations by combining time tracking, leave management, team communication (chat and video), and project management (Kanban-style boards). It helps small to medium-sized businesses streamline workflows, reduce the need for multiple software subscriptions, and enhance team productivity—whether your employees are on-site or remote.",
     },
     {
-      question: "Is CollabDash secure?",
+      question: "Do I need separate tools for video calls and team chat?",
       answer:
-        "Absolutely. We use enterprise-grade encryption and security protocols to ensure all your data, from chat logs to time entries, stays private and secure.",
+        "No, CollabDash includes built-in video meetings and peer-to-peer chat features. You won’t need additional subscriptions for platforms like Zoom or Slack. Your team can easily chat or launch video calls right from the platform, all in one seamless workflow.",
     },
     {
-      question: "What happens after the 14-day free trial?",
+      question: "Can I track my team’s time and manage leave requests?",
       answer:
-        "After your trial, you can choose one of our affordable plans. We’re confident you’ll see the value of CollabDash within the first two weeks, but you’re free to cancel anytime before the trial ends if it’s not the right fit for your team.",
+        "Yes, CollabDash offers a comprehensive time-in/time-out tracking feature, so employees can log their hours easily. The platform also includes leave management, allowing employees to request leave and managers to approve or reject requests—all within the app.",
+    },
+    {
+      question: "How does the project management feature work?",
+      answer:
+        "CollabDash features a Trello-like Kanban board where you can organize tasks, assign responsibilities, and track project progress. It’s ideal for keeping your team aligned and ensuring all tasks are completed on time, without the need for external project management tools.",
+    },
+    {
+      question: "Is there a free trial available?",
+      answer:
+        "Yes, we offer a 14-day free trial with full access to all features. You can explore time tracking, team collaboration tools, project management, and more, without any commitment or credit card required.",
     },
   ];
 

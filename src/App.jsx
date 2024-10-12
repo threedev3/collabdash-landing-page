@@ -1,18 +1,18 @@
+import { Toaster } from "react-hot-toast";
+import Herosection from "./components/Herosection/Herosection";
+import Features from "./components/Features/Features";
+import Testimonials from "./components/Testimonials/Testimonials";
+import Pricing from "./components/Pricing/Pricing";
 import Choose from "./components/Choose/Choose";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Faq from "./components/FAQ/Faq";
-import Features from "./components/Features/Features";
 import Footer from "./components/Footer/Footer";
-import Herosection from "./components/Herosection/Herosection";
-import Pricing from "./components/Pricing/Pricing";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import Testimonials from "./components/Testimonials/Testimonials";
-import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="">
-      <Toaster position="top-center" />
+      <Toaster position="bottom-center" />
       <div id="home">
         <Herosection />
       </div>

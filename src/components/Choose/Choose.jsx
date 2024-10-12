@@ -12,7 +12,7 @@ const Choose = () => {
   ];
 
   return (
-    <div className="relative px-4 sm:px-6 py-8 lg:py-6 xl:py-10 min-[1400px]:py-0 xl:h-[100vh]">
+    <div className="relative px-4 sm:px-6 py-8 lg:py-6 xl:py-10 min-[1400px]:py-6 ">
       <div className="absolute min-[1400px]:-top-80 xl:-top-0 lg:-top-16 top-36 left-0 right-0 bottom-0 bg-[url('/src/assets/img/chooseBg.png')] bg-no-repeat lg:bg-cover bg-cover opacity-70 w-full -z-30 "></div>
       <div className="bg-black/20 w-full h-full absolute left-0 right-0 -z-20"></div>
       {/* <div className="absolute min-[1500px]:-top-10 xl:top-10 top-8 left-0 right-0 bottom-0 bg-[url('/src/assets/img/chooseBg3.png')] bg-no-repeat bg-contain w-full -z-10"></div> */}
