@@ -7,7 +7,6 @@ import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { PhoneNumberUtil } from "google-libphonenumber";
-import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
   const [step, setStep] = useState(1);
@@ -94,20 +93,20 @@ const ContactForm = () => {
       formErrors.city = "City is required.";
     }
 
-    if (!formData.company) {
-      formErrors.company = "Company name is required.";
-    }
+    // if (!formData.company) {
+    //   formErrors.company = "Company name is required.";
+    // }
 
-    if (!formData.companySize) {
-      formErrors.companySize = "Company size is required.";
-    }
+    // if (!formData.companySize) {
+    //   formErrors.companySize = "Company size is required.";
+    // }
 
-    if (formData.interests.length === 0) {
-      formErrors.interests = "Please select at least one key interest.";
-    }
-    if (!formData.challenges) {
-      formErrors.challenges = "Challenges is required.";
-    }
+    // if (formData.interests.length === 0) {
+    //   formErrors.interests = "Please select at least one key interest.";
+    // }
+    // if (!formData.challenges) {
+    //   formErrors.challenges = "Challenges is required.";
+    // }
 
     // Update errors state
     setErrors(formErrors);
@@ -354,7 +353,15 @@ const ContactForm = () => {
                   STEP 2
                 </button>
               </div>
-              <form onSubmit={handleSubmit} className="">
+              <form
+                onSubmit={handleSubmit}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault(); // Prevents form submission on pressing Enter
+                  }
+                }}
+                className=""
+              >
                 <div
                   className={`transition-all duration-300 ease-in-out  ${
                     step === 1
@@ -430,9 +437,9 @@ const ContactForm = () => {
                           onChange={handleInputChange}
                           className="w-full font-outfit py-3 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0 focus:ring-none"
                         />
-                        {errors.company && (
+                        {errors.city && (
                           <span className="text-red-500 font-outfit lg:text-base text-sm">
-                            {errors.company}
+                            {errors.city}
                           </span>
                         )}
                       </div>
@@ -464,11 +471,11 @@ const ContactForm = () => {
                           onChange={handleInputChange}
                           className="w-full font-outfit py-3 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0 focus:ring-none"
                         />
-                        {errors.company && (
+                        {/* {errors.company && (
                           <span className="text-red-500 font-outfit lg:text-base text-sm">
                             {errors.company}
                           </span>
-                        )}
+                        )} */}
                       </div>
                       <div className="flex flex-col gap-2 w-full">
                         <Select
@@ -481,11 +488,11 @@ const ContactForm = () => {
                           className="w-full font-outfit"
                           classNamePrefix="react-select"
                         />
-                        {errors.companySize && (
+                        {/* {errors.companySize && (
                           <span className="text-red-500 font-outfit lg:text-base text-sm">
                             {errors.companySize}
                           </span>
-                        )}
+                        )} */}
                       </div>
                     </div>
                     <div className="grid sm:grid-cols-2 grid-cols-1 gap-3">
@@ -501,11 +508,11 @@ const ContactForm = () => {
                           className="w-full font-outfit "
                           classNamePrefix="react-select"
                         />
-                        {errors.interests && (
+                        {/* {errors.interests && (
                           <span className="text-red-500 font-outfit lg:text-base text-sm">
                             {errors.interests}
                           </span>
-                        )}
+                        )} */}
                       </div>
                       <div className="flex flex-col gap-2 w-full">
                         <Select
@@ -563,11 +570,11 @@ const ContactForm = () => {
                           onChange={handleInputChange}
                           className="w-full font-outfit h-32 py-3 px-6 rounded-lg bg-inputBg border-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:ring-0"
                         />
-                        {errors.challenges && (
+                        {/* {errors.challenges && (
                           <span className="text-red-500 font-outfit lg:text-base text-sm">
                             {errors.challenges}
                           </span>
-                        )}
+                        )} */}
                       </div>
                     </div>
                     <div className="grid  grid-cols-1 gap-3">

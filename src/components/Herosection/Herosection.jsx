@@ -36,7 +36,8 @@ const Herosection = () => {
   return (
     <div className="relative px-4 sm:px-6 py-8 sm:py-12 min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-heroColor via-transparent to-transparent opacity-30 -z-10"></div>
-      <div className="absolute inset-0 bg-[url('/src/assets/img/purpleShade.png')] bg-no-repeat bg-cover w-full -z-10"></div>
+      {/* <div className="absolute inset-0 bg-[url('/src/assets/img/purpleShade.png')] bg-no-repeat bg-cover w-full -z-10"></div> */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#7300ff60] via-[#4f297e25] to-transparent w-full -z-10"></div>
       <div className="min-[1400px]:max-w-[90%] max-w-[94%] mx-auto flex flex-col gap-8 xl:gap-12">
         <Navbar />
 
@@ -94,6 +95,7 @@ const Herosection = () => {
             <img
               src={heroImg}
               alt="Hero Laptop"
+              loading="lazy"
               className="w-full absolute min-[1486px]:top-[10%] xl:top-[10%] top-[22%] right-0 max-w-[600px] xl:max-w-[850px] min-[1486px]:max-w-5xl  object-contain"
             />
           </div>
@@ -101,6 +103,7 @@ const Herosection = () => {
             <img
               src={smallHeroImg}
               alt="Hero Laptop"
+              loading="lazy"
               className="w-auto object-contain "
             />
           </div>

@@ -84,7 +84,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="relative pt-8 ">
               <div
-                className={`bg-white/10 rounded-xl p-6 h-full flex flex-col justify-center items-center relative min-[1378px]:min-h-64 xl:min-h-[292px] lg:min-h-[276px] min-[943px]:min-h-60 min-[819px]:min-h-64 min-h-[270px] cursor-pointer  ${
+                className={`bg-white/10 rounded-xl p-6 h-full flex flex-col justify-center items-center relative min-[1378px]:min-h-64 xl:min-h-[292px] lg:min-h-[276px] min-[943px]:min-h-60 min-[819px]:min-h-64 min-h-[270px] cursor-pointer border border-white/10 ${
                   activeSlide === index
                     ? "bg-white/20 border border-white/25"
                     : ""

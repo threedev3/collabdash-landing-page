@@ -15,7 +15,7 @@ const Pricing = () => {
       title: "Affordable Pricing Plans",
       tagLine: "We’re committed to transparent pricing",
       checkPoints: [
-        "Pay just $XX per user per month.",
+        "Pay just $20 per user per month.",
         "No hidden fees, no confusing limits.",
       ],
     },

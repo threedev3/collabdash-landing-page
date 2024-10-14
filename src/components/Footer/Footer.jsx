@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           <div className="flex lg:gap-6 gap-3 items-center justify-center flex-wrap">
-            {navigation.map((item, index) => (
+            {/* {navigation.map((item, index) => (
               <div
                 className="flex lg:gap-6 gap-3 items-center"
                 key={index}
@@ -53,14 +53,39 @@ const Footer = () => {
                   </div>
                 )}
               </div>
-            ))}
+            ))} */}
+
+            <div className="flex flex-col lg:gap-6 gap-3 items-center">
+              <p className="font-outfit text-white/90 md:text-lg min-[540px]:text-sm text-sm text-center">
+                CollabDash is fully owned by ASE Global LLC & CollabEZ FZE LLC
+                Business Center, SPC FZ, Sharjah, UAE
+              </p>
+              <div className="flex items-center sm:gap-3 gap-2">
+                <p className="font-outfit text-white/90 md:text-base min-[540px]:text-sm text-sm">
+                  +97142206029
+                </p>
+                <a
+                  className="font-outfit text-white/90 md:text-base min-[540px]:text-sm text-sm"
+                  href="mailto:hello@collabez.ae"
+                >
+                  hello@collabez.ae
+                </a>
+                <a
+                  className="font-outfit text-white/90 md:text-base min-[540px]:text-sm text-sm"
+                  href="https://collabez.ae/"
+                  target="_blank"
+                >
+                  https://collabez.ae
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="h-0.5 w-full bg-white/30 rounded-full"></div>
 
           <div className="flex justify-center items-center gap-3">
             <div className="">
-              <p className="font-outfit text-white/60 md:text-lg min-[540px]:text-sm text-sm">
+              <p className="font-outfit text-white/90 md:text-lg min-[540px]:text-sm text-sm">
                 Copyright © {currentYear} CollabDash
               </p>
             </div>
